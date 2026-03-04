@@ -29,4 +29,6 @@ u_3:GetPropertyChangedSignal("Value"):Connect(function()
     end
 end)
 
+print("Script Loaded")
+
 -- Made by Kiro
