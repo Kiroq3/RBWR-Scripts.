@@ -7,3 +7,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Kiroq3/Scripts/refs/h
 
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Kiroq3/Scripts/refs/heads/main/ScramReason%26Annunciator.luau"))()
+
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kiroq3/Scripts/refs/heads/main/BreakersAutoReset.luau"))()
