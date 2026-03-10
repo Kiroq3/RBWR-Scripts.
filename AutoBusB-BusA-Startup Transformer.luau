@@ -29,10 +29,18 @@ u_3:GetPropertyChangedSignal("Value"):Connect(function()
     end
 end)
 
-starterGui:SetCore("SendNotification", {
-    Title = "Script Loaded";
-    Text = "Loaded Successfully!";
-    Duration = 5;
-})
+local StarterGui = game:GetService("StarterGui")
+
+local success = false
+while not success do
+    success = pcall(function()
+        StarterGui:SetCore("SendNotification", {
+            Title = "Script Loaded",
+            Text = "Loaded Successfully!",
+            Duration = 5
+        })
+    end)
+    task.wait(0.1)
+end
 
 print("Loaded")
