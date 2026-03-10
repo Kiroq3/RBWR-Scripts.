@@ -29,6 +29,10 @@ u_3:GetPropertyChangedSignal("Value"):Connect(function()
     end
 end)
 
-print("Script Loaded")
+starterGui:SetCore("SendNotification", {
+    Title = "Script Loaded";
+    Text = "Loaded Successfully!";
+    Duration = 5;
+})
 
--- Made by Kiro
+print("Loaded")
