@@ -1,3 +1,4 @@
+local starterGui = game:GetService("StarterGui")
 local v_u_1 = workspace.ControlRoom.SMWATER.MakeupPumpPower -- MakeUp
 local v_u_2 = workspace.ControlRoom.SMWATER.ServicePumpPower -- Service Pump
 
@@ -29,6 +30,8 @@ local v_u_21 = workspace.ControlRoom.CONDENSER.PumpA2Power -- CND 5
 local v_u_22 = workspace.ControlRoom.CONDENSER.PumpB2Power -- CND 6
 local v_u_23 = workspace.ControlRoom.CONDENSER.PumpC2Power -- CND 7
 local v_u_24 = workspace.ControlRoom.CONDENSER.PumpD2Power -- CND 8
+
+local success = false
 
 v_u_1:GetPropertyChangedSignal("Value"):Connect(function()
 
@@ -297,3 +300,17 @@ v_u_4:GetPropertyChangedSignal("Value"):Connect(function()
         end
     end
 end)
+
+while not success do
+    success = pcall(function()
+        starterGui:SetCore("SendNotification", {
+            Title = "Script Loaded";
+            Text = "Loaded Successfully!";
+            Duration = 5;
+        })
+    end)
+    task.wait(0.1)
+end
+
+print("Loaded")
+
