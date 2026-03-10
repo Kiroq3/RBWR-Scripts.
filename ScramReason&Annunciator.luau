@@ -1,4 +1,7 @@
 local Rep = workspace
+local starterGui = game:GetService("StarterGui")
+
+local success = false
 
 local function monitorReactor(reacName, displayName)
     local reactor = Rep:FindFirstChild(reacName)
@@ -42,4 +45,15 @@ end
 monitorReactor("Reaktor", "Unit 1")
 monitorReactor("Reaktor2", "Unit 2")
 
--- Made by Kiro
+while not success do
+    success = pcall(function()
+        starterGui:SetCore("SendNotification", {
+            Title = "Script Loaded";
+            Text = "Loaded Successfully!";
+            Duration = 5;
+        })
+    end)
+    task.wait(0.1)
+end
+
+print("Loaded")
